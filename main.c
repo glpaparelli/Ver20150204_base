@@ -18,10 +18,16 @@ int main(int argc, char** argv) {
     int quo;
     int res;
     float pd;
-    int i;
+    int i=0;
     
     printf("Inserisci %d valori interi POSITIVI\n", SIZE);
     // inserisci il codice necessario all'inserimento dei valori nell'array v
+    
+    while (i<SIZE){
+        scanf("%d",&v[i]);
+        i++;
+    }
+   
     
     mas = massimo(v, SIZE);
     med = media(v, SIZE);
@@ -47,7 +53,17 @@ int main(int argc, char** argv) {
  */
 int massimo(int valori[], int n) {
     // TODO Implementa il codice della funzione
-    return -1;
+    int max=0;
+    int i=0;
+    
+    while (i<n){
+        if(max<valori[i]){
+            max=valori[i];
+        }
+        i++;
+    }
+    
+    return max;
 }
 
 /*
@@ -55,7 +71,22 @@ int massimo(int valori[], int n) {
  */
 float media(int valori[], int n) {
     // TODO Implementa il codice della funzione
-    return -1;
+    int i=0;
+    int somma=0;
+    int media=0;
+    
+    while (i<n){
+        somma=somma+valori[i];
+        i++;
+    }
+/*
+    
+    for (i=0;i<n;i++){
+        somma=somma+valori[i];
+    }
+*/
+    media=somma/n;
+    return (media);
 }
 
 /*
@@ -64,7 +95,12 @@ float media(int valori[], int n) {
  */
 float divisione(int dividendo, int divisore) {
     // TODO Implementa il codice della funzione
-    return -1;
+    float r=0;
+    
+    r = (dividendo/divisore);
+    
+    return(r);
+    
 }
 
 /*
@@ -73,7 +109,13 @@ float divisione(int dividendo, int divisore) {
  */
 int quoziente(int dividendo, int divisore) {
     // TODO Implementa il codice della funzione
-    return -1;
+    int quoz=0;
+    
+    quoz=dividendo/divisore;
+    
+    return quoz;
+    
+    
 }
 
 /*
@@ -82,7 +124,11 @@ int quoziente(int dividendo, int divisore) {
  */
 int restoDivisione(int dividendo, int divisore) {
     // TODO Implementa il codice della funzione
-    return -1;
+
+    int res=0;
+   
+    res = dividendo % divisore ;
+    return res;
 }
 
 /*
@@ -92,6 +138,14 @@ int restoDivisione(int dividendo, int divisore) {
  */
 float parteDecimaleDivisione(int dividendo, int divisore) {
     // TODO Implementa il codice della funzione
-    return -1;
+    float res=0;
+    float div;
+    int quoz;
+    div = dividendo / divisore;
+    quoz = dividendo / divisore;
+    
+    res = div-quoz;
+    
+    return res;
 }
 
